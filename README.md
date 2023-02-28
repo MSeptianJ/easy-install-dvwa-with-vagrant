@@ -1,6 +1,38 @@
-# **easy-install-dvwa-with-vagrant**
+# **Easy Install DVWA with Vagrant**
 
-## **Steps**
+This repo will explain how to install [DVWA](https://github.com/digininja/DVWA) with vagrant to make VM with debian in it. This was made for my task in my university to do a penetration test with DVWA. You can do this easily after install the tools needed, you only need to have <2 GB of free RAM in you device.
+
+## **Tools Needed**
+
+- [Vagrant](https://www.vagrantup.com/)
+- [Virtual Box](https://www.virtualbox.org/)
+- [Git](https://git-scm.com/)
+
+<details>
+
+<summary><b>Installation Steps</b></summary>
+
+### **Build VM**
+
+- make a new folder and open a terminal to that folder
+- initialise vagrant
+
+```CMD
+vagrant up
+```
+
+- replace the new made VagrantFile with VagrantFile from this repo, but change the name and ip
+- build the VM
+
+```CMD
+vagrant up
+```
+
+- SSH to VM using vagrant
+
+```CMD
+vagrant ssh
+```
 
 ### **Apps Installation**
 
@@ -116,3 +148,12 @@ password : password
 
 - go to setup/reset DB
 - click Create/Reset Database
+
+</details>
+
+## **Reference**
+
+- <https://github.com/digininja/DVWA>
+- <https://kifarunix.com/install-and-setup-dvwa-on-debian-10/>
+- <https://kifarunix.com/install-lamp-stack-with-mariadb-10-on-debian-10-buster/>
+- <https://www.vagrantup.com/>
