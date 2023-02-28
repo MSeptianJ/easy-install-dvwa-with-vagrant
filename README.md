@@ -16,7 +16,7 @@ sudo apt -y install apache2 libapache2-mod-php mariadb-server mariadb-client php
 systemctl status apache2
 ```
 
-- Secure db (Optional)  
+- Secure mysql db (Optional)  
 
 ```CMD
 sudo mysql_secure_installation
@@ -48,27 +48,36 @@ quit
 sudo rm -rf /var/www/html/index.html
 ```
 
+- Clone the DVWA repo, change the config file and use nano to edit it
+
 ``` CMD
 sudo git clone https://github.com/ethicalhack3r/DVWA /var/www/html/
 sudo cp /var/www/html/config/config.inc.php.dist /var/www/html/config/config.inc.php
 sudo nano /var/www/html/config/config.inc.php
 ```
 
+- Change the db_password to the password db you use
+
 ```PHP
 $_DVWA[ 'db_server' ]   = '127.0.0.1';
 $_DVWA[ 'db_database' ] = 'dvwa';
 $_DVWA[ 'db_user' ]     = 'dvwa';
-$_DVWA[ 'db_password' ] = 'YourMom';
+$_DVWA[ 'db_password' ] = 'YOURPASSWORD';
 ```
 
 ### **Make a reCAPTCHA v2**
 
-"https://www.google.com/recaptcha/admin"
+- Dont close the nano app yet, and make a reCAPTCHA v2
+- Click [here](https://www.google.com/recaptcha/admin) to go to google captcha
+- place the site key to public key, and secret key to private key
 
 ```PHP
 $_DVWA[ 'recaptcha_public_key' ]  = '';
 $_DVWA[ 'recaptcha_private_key' ] = '';
 ```
+
+- Save with Ctrl + S and close nano with Ctrl + X
+- then restart db
 
 ``` CMD
 sudo systemctl restart mariadb
@@ -76,15 +85,21 @@ sudo systemctl restart mariadb
 
 ### **Configure PHP**
 
+- Now open php config
+
 ``` CMD
 sudo nano /etc/php/7.4/apache2/php.ini
 ```
+
+- Search for these terms and change the value
 
 ```txt
 allow_url_include = On
 allow_url_fopen = On
 display_errors = off
 ```
+
+- Change the owner and restart web server
 
 ``` CMD
 sudo chown -R www-data:www-data /var/www/html
@@ -93,9 +108,9 @@ sudo systemctl restart apache2
 
 ### **Go to browser**
 
-"http://YOURIP/login.php"
+- use your browser and type VM's ip address "http://YOURIP/login.php"
 
-- If you dont secure your db, you will login automaticaly but if you dont the acount is vvv
+- If you dont secure your db, you will login automaticaly but if you dont the acount is vvv  
 name : admin  
 password : password
 
