@@ -8,9 +8,16 @@ This repo will explain how to install [DVWA](https://github.com/digininja/DVWA) 
 - [Virtual Box](https://www.virtualbox.org/)
 - [Git](https://git-scm.com/)
 
-<details>
+## **Reference**
 
-<summary><b>Installation Steps</b></summary>
+- <https://github.com/digininja/DVWA>
+- <https://kifarunix.com/install-and-setup-dvwa-on-debian-10/>
+- <https://kifarunix.com/install-lamp-stack-with-mariadb-10-on-debian-10-buster/>
+- <https://www.vagrantup.com/>
+
+## **Steps**
+
+<details>
 
 ### **Build VM**
 
@@ -150,10 +157,3 @@ password : password
 - click Create/Reset Database
 
 </details>
-
-## **Reference**
-
-- <https://github.com/digininja/DVWA>
-- <https://kifarunix.com/install-and-setup-dvwa-on-debian-10/>
-- <https://kifarunix.com/install-lamp-stack-with-mariadb-10-on-debian-10-buster/>
-- <https://www.vagrantup.com/>
